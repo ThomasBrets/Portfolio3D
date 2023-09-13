@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
-  // const formRef = formRef()
+  const formRef = useRef()  
 
   const [form, setform] = useState({
     name: "",
@@ -33,7 +33,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          // ref={formRef}
+          ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap 8"
         >
