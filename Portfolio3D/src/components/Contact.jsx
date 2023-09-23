@@ -7,21 +7,63 @@ import Earth from "./canvas/Earth";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+
+// ? email.js
+
+// template_o3ef40a   // template
+// service_1xm8s14    // service
+// _zFUdxfea1_VMyin1  // key
+
+
+
 const Contact = () => {
   const formRef = useRef()  
+  const [loading, setloading] = useState(false);
 
   const [form, setform] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [loading, setloading] = useState(false);
 
   const handleChange = (e) => {
-    // e.prevent.default
+    const { name, value } = e.target;
+
+    setform({ ...form, [name]: value}) //El [name] puede tomar cualquier valor de "form"("name", "email", "message")
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setloading(true)
+
+    emailjs.send(
+      "service_1xm8s14", //Servuce
+      "template_o3ef40a", //Templates
+      {
+        from_name: form.name,
+        to_name: "Thomas", 
+        from_email: form.email,
+        to_email: "thomasbrets1999@gmail.com",
+        message: form.message
+    },
+    "_zFUdxfea1_VMyin1" //key
+    )
+    .then(() => {
+      setloading(false)
+      alert("Thank you. I will get back to you as soon as possible.")
+
+      setform({
+        name: "",
+        email: "",
+        message: "",
+      })
+    }).catch((err) => {
+      setloading(false)
+      console.log(err);
+
+      alert("Something went wrong")
+    })
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -55,7 +97,7 @@ const Contact = () => {
               type="email"
               name="email"
               placeholder="What`s your email?"
-              value={form.message}
+              value={form.email}
               onChange={handleChange}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
