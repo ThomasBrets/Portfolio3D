@@ -28,10 +28,11 @@ import tesla from "./company/tesla.png";
 import plataforma5 from "./company/plataforma5.png";
 import bitech from "./company/bitech.png";
 
-import adventure from "./adventure.png";
-import pipe from "./pipe.png";
-import tpm from "./tpm.png";
-
+import adventure from "./proyects/adventure.png";
+import pipe from "./proyects/pipe.png";
+import tpm from "./proyects/tpm.png";
+import homeland from "./proyects/homeland.png";
+import hotel from "./proyects/hotel.png";
 
 export {
   logo,
@@ -64,4 +65,6 @@ export {
   adventure,
   pipe,
   tpm,
+  homeland,
+  hotel,
 };
