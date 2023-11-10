@@ -24,6 +24,8 @@ import {
   adventure,
   pipe,
   tpm,
+  hotel,
+  homeland,
   threejs,
 } from "../assets";
 
@@ -216,6 +218,53 @@ const projects = [
     ],
     image: tpm,
     source_code_link: "https://github.com/ThomasBrets/ThePerfectMentor.git",
+  },
+  {
+    name: "Aldina Hotel | Frontend",
+    description: [
+      "The Perfect Mentor",
+      "Individual.",
+      "Development of a Hotel page to reserve rooms.",
+    ],
+    tags: [
+      {
+        name: "Tailwind",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Node",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hotel,
+    source_code_link: "https://github.com/ThomasBrets/Hotel.git",
+  },
+  {
+    name: "Homeland | Frontend",
+    description: [
+      "Individual.",
+      "Development of a real estate page to find and buy your ideal property.",
+    ],
+    tags: [
+      {
+        name: "Tailwind",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Node",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: homeland,
+    source_code_link: "https://github.com/ThomasBrets/Real-State.git",
   },
 ];
 
